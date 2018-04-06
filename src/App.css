@@ -26,3 +26,42 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+/* @media (min-width: 768px){
+  .container-password-form {
+      width: 400px;
+  }
+} */
+
+
+.loginbox {
+  margin-top: 50px;
+}
+
+.pad-t-30 {
+  padding-top: 30px;
+}
+
+.display-none {
+  display: none;
+}
+
+.mar-b-25 {
+  margin-bottom: 25px;
+}
+
+.mar-t-10 {
+  margin-top: 10px;
+}
+
+.width-100 {
+  width: 100px;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.mar-r-5 {
+  margin-right: 5px;
+}
