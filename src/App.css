@@ -39,11 +39,15 @@
 }
 
 .pad-t-30 {
-  padding-top: 30px;
+  padding: 30px 15px 15px 15px;
 }
 
 .display-none {
-  display: none;
+  text-decoration: line-through;
+}
+
+.display-true {
+  display: inline;
 }
 
 .mar-b-25 {
@@ -64,4 +68,21 @@
 
 .mar-r-5 {
   margin-right: 5px;
+}
+
+td {
+  text-align: justify;
+}
+
+td {
+  vertical-align: super !important; 
+}
+
+a {
+  cursor: pointer;
+}
+
+.error-border {
+  border: 2px solid red !important;
+  border-radius: 4px !important;
 }

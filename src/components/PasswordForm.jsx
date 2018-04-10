@@ -1,40 +1,47 @@
 import React, { Component } from 'react';
+import PasswordSaveButton from './PasswordSaveButton';
+import PasswordChecker from './PasswordChecker';
 
 class PasswordForm extends Component {
     constructor(props) {
         super(props);
-        this.state = {}
+        this.state = {
+            passwordValue: ''
+        }
     }
+
+    checker = (e) => {
+        this.setState({
+            passwordValue: e.target.value
+        })
+    }
+
     render() {
         return (
-            <div class="container">
-                <div id="loginbox" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 loginbox">
-                    <div class="panel panel-info" >
-                        <div class="panel-heading">
-                            <div class="panel-title">Password Form</div>
+            <div className="container">
+                <div id="loginbox" className="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 loginbox">
+                    <div className="panel panel-info" >
+                        <div className="panel-heading">
+                            <div className="panel-title">Password Form</div>
                         </div>
-                        <div class="panel-body pad-t-30" >
-                            <div class="alert alert-danger text-justify display-none" role="alert">
-                                <span class="glyphicon glyphicon-exclamation-sign mar-r-5" aria-hidden="true"></span>
-                                <span class="sr-only">Error:</span>
-                                Enter a valid email address
-                            </div>
-                            <form id="loginform" class="form-horizontal">
-                                <div class="input-group mar-b-25">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-link"></i></span>
-                                    <input id="url" type="text" class="form-control" name="url" placeholder="URL" />
+                        <div className="pad-t-30" >
+                            <form id="loginform" className="form-horizontal">
+                                <div className="input-group mar-b-25">
+                                    <span className="input-group-addon"><i className="glyphicon glyphicon-link"></i></span>
+                                    <input id="url" type="text" className="form-control" name="url" placeholder="URL" />
                                 </div>
-                                <div class="input-group mar-b-25">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                    <input id="username" type="text" class="form-control" name="username" placeholder="Username" />
+                                <div className="input-group mar-b-25">
+                                    <span className="input-group-addon"><i className="glyphicon glyphicon-user"></i></span>
+                                    <input id="username" type="text" className="form-control" name="username" placeholder="Username" />
                                 </div>
-                                <div class="input-group mar-b-25">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                    <input id="password" type="password" class="form-control" name="password" placeholder="Password" />
+                                <div className="input-group mar-b-25">
+                                    <span className="input-group-addon"><i className="glyphicon glyphicon-lock"></i></span>
+                                    <input id="password" type="password" className="form-control" name="password" placeholder="Password" onChange={this.checker} />
                                 </div>
-                                <div class="form-group">
-                                    <div class="col-sm-12 controls">
-                                        <a id="btn-login" href="/" class="btn btn-info pull-right width-100">Save</a>
+                                <PasswordChecker pswVal={this.state.passwordValue} />
+                                <div className="form-group">
+                                    <div className="col-sm-12 controls">
+                                        <PasswordSaveButton />
                                     </div>
                                 </div>
                             </form>

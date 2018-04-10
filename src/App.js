@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
-import { BrowserRouter} from 'react-router-dom';
-// , Route, Switch 
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import PasswordForm from './components/PasswordForm';
+import PasswordList from './components/PasswordList';
+import PasswordEditModal from './components/PasswordEditModal';
 
 class App extends Component {
   render() {
@@ -11,7 +12,12 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
           <Navbar />
-          <PasswordForm />
+          <Switch>
+            <Route exact path="/" component={PasswordForm} />
+            <Route path="/password-list" component={PasswordList} />
+            <Redirect from='/' to='/' />
+          </Switch>
+          <PasswordEditModal/>
         </div>
       </BrowserRouter>
     );
