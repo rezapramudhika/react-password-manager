@@ -3,6 +3,7 @@ import {
     GET_PASSWORD_SUCCESS,
     EDIT_PASSWORD_SUCCESS,
     DELETE_PASSWORD_SUCCESS,
+    SEARCH_PASSWORD,
     EDIT_MODAL_OPEN,
     EDIT_MODAL_CLOSE,
     LOADING,
@@ -17,7 +18,8 @@ const initialState = {
     key: '',
     url: '',
     username: '',
-    password: ''
+    password: '',
+    searchPassword: ''
 }
 
 const reducers = (state = initialState, action) => {
@@ -46,6 +48,11 @@ const reducers = (state = initialState, action) => {
                 ...state,
                 loading: false,
                 error: false
+            }
+        case SEARCH_PASSWORD:
+            return {
+                ...state,
+                searchPassword: action.payload
             }
         case EDIT_MODAL_OPEN:
             return {

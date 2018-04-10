@@ -5,6 +5,7 @@ import {
     DELETE_PASSWORD_SUCCESS,
     EDIT_MODAL_OPEN,
     EDIT_MODAL_CLOSE,
+    SEARCH_PASSWORD,
     LOADING,
     ERROR
 } from './password.actionTypes';
@@ -113,6 +114,13 @@ const swalDeletePswSuccess = () => {
     return dispatch => {
         swal("Delete success!", "Delete password successfully", "success");
         dispatch(deletePasswordSuccess())
+    }
+}
+
+export const searchPassword = (payload) => {
+    return {
+        type: SEARCH_PASSWORD,
+        payload
     }
 }
 
