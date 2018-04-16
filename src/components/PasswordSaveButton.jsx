@@ -4,7 +4,7 @@ import { createPassword } from '../store/password/password.actions';
 import { bindActionCreators } from 'redux';
 import Loader from 'react-loader-spinner';
 
-class PasswordSaveButton extends Component {
+export class PasswordSaveButton extends Component {
     constructor(props) {
         super(props);
         this.state = { }
@@ -32,7 +32,7 @@ class PasswordSaveButton extends Component {
             )
         }
         return (
-            <a id="btn-login" className="btn btn-info pull-right width-100" onClick={this.createPassword}>Save</a>
+            <button id="btn-login" className="btn btn-info pull-right width-100" onClick={this.createPassword}>Save</button>
         )
     }
 }

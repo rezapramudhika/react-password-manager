@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { editModalOpen, deletePassword } from '../store/password/password.actions';
 import { bindActionCreators } from 'redux';
 
-class PasswordListRow extends Component {
+export class PasswordListRow extends Component {
     constructor(props) {
         super(props);
         this.state = { }
@@ -28,9 +28,9 @@ class PasswordListRow extends Component {
     render() {
         return (
             <tr>
-                <td>{this.props.row.url ? this.props.row.url : '-'}</td>
-                <td>{this.props.row.username ? this.props.row.username : '-'}</td>
-                <td>{this.props.row.password ? this.props.row.password : '-'}</td>
+                <td>{this.props.row.url}</td>
+                <td>{this.props.row.username}</td>
+                <td>{this.props.row.password}</td>
                 <td>{moment(this.props.row.createdAt).format("dddd, MMMM Do YYYY")}</td>
                 <td>{moment(this.props.row.updatedAt).format("dddd, MMMM Do YYYY")}</td>
                 <td>
@@ -39,8 +39,8 @@ class PasswordListRow extends Component {
                             <span className="glyphicon glyphicon-option-vertical"></span>
                         </a>
                         <ul className="dropdown-menu">
-                            <li><a onClick={this.openModal} data-toggle="modal" data-target="#edit-password-modal">Edit</a></li>
-                            <li><a onClick={this.deletePassword}>Delete</a></li>
+                            <li><a id="openmodal" onClick={this.openModal} data-toggle="modal" data-target="#edit-password-modal">Edit</a></li>
+                            <li><a id="deletePass" onClick={this.deletePassword}>Delete</a></li>
                         </ul>
                     </div>
                 </td>

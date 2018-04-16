@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { searchPassword } from '../store/password/password.actions';
 import { bindActionCreators } from 'redux';
 
-class PasswordSearchForm extends Component {
+export class PasswordSearchForm extends Component {
     constructor(props) {
         super(props);
         this.state = {}
@@ -17,7 +17,7 @@ class PasswordSearchForm extends Component {
         return (
             <div className="input-group" style={{width: 400, marginBottom: 20}}>
                 <span className="input-group-addon" id="basic-addon1"><span className="glyphicon glyphicon-search"></span></span>
-                <input type="text" className="form-control" placeholder="Search url here..." onChange={this.searchOnChange} />
+                <input type="text" className="form-control" name="searchbox" placeholder="Search url here..." onChange={this.searchOnChange} />
             </div>
         )
     }

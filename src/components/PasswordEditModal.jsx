@@ -4,7 +4,7 @@ import { editModalClose, editPassword } from '../store/password/password.actions
 import { bindActionCreators } from 'redux';
 import Loader from 'react-loader-spinner';
 
-class PasswordEditModal extends Component {
+export class PasswordEditModal extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -42,7 +42,7 @@ class PasswordEditModal extends Component {
 
     render() {
         return (
-            <div className="modal fade" id="edit-password-modal">
+            <div className="modal hide" id="edit-password-modal">
                 <div className="modal-dialog text-justify">
                     <div className="modal-content">
                         <div className="modal-header">
@@ -62,8 +62,8 @@ class PasswordEditModal extends Component {
                                 <label>Old Password</label>
                                 {
                                     this.state.isOldPassword ?
-                                        <input type="text" className={this.state.oldPasswordClassName} id="passwordEditOld" onChange={this.passwordOnChange} /> :
-                                        <input type="text" className={this.state.oldPasswordClassName} id="passwordEditOld" onChange={this.passwordOnChange} />
+                                        <input type="text" className={this.state.oldPasswordClassName} id="passwordEditOld" name="pswEdit" onChange={this.passwordOnChange} /> :
+                                        <input type="text" className={this.state.oldPasswordClassName} id="passwordEditOld" name="pswEdit" onChange={this.passwordOnChange} />
                                 }
                             </div>
                             <div className="form-group">
@@ -79,7 +79,7 @@ class PasswordEditModal extends Component {
                                             <span> <Loader type="TailSpin" color="#000" height={30} width={30} className="pull-right" /> Saving... </span>
                                             <button type="button" className="btn btn-primary" disabled>Submit</button>
                                         </div>
-                                        : <button type="button" className="btn btn-primary" onClick={this.editPassword}>Submit</button>
+                                        : <button id="submitEditPassword" type="button" className="btn btn-primary" onClick={this.editPassword}>Submit</button>
                                     : <button type="button" className="btn btn-primary" disabled>Submit</button>
                             }
                         </div>

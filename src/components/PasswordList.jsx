@@ -7,7 +7,7 @@ import Loader from 'react-loader-spinner';
 import PasswordListRow from './PasswordListRow';
 import PasswordSearchForm from './PasswordSearchForm';
 
-class PasswordList extends Component {
+export class PasswordList extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -62,10 +62,10 @@ class PasswordList extends Component {
                                             {
                                                 this.props.password.searchPassword === '' ?
                                                     this.props.password.data.map(row =>
-                                                        <PasswordListRow row={row} key={row.key} />
+                                                        <PasswordListRow row={row} key={'psw'+row.key} />
                                                     ) :
                                                     this.state.searchResult.map(row =>
-                                                        <PasswordListRow row={row} key={row.key} />
+                                                        <PasswordListRow row={row} key={'psw'+row.key} />
                                                     )
                                             }
                                         </tbody>
