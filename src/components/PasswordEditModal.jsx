@@ -42,7 +42,7 @@ export class PasswordEditModal extends Component {
 
     render() {
         return (
-            <div className="modal hide" id="edit-password-modal">
+            <div className="modal fade" id="edit-password-modal">
                 <div className="modal-dialog text-justify">
                     <div className="modal-content">
                         <div className="modal-header">
